@@ -7,7 +7,7 @@ const StripeCheckoutButton = ({ price }) => {
   const publishableKey =
     "pk_test_51IlbAnSCZcZQMjATYHdisuq5ZJpqpDtjMpbddNaUFXoAxQFjUQDfLjxVkqHILtqVgtbCmd6AnDmjtIqH19jfIn3H00vB9UbIrQ";
 
-  const onToken = ({ token }) => {
+  const onToken = (token) => {
     axios({
       url: "payment",
       method: "post",
@@ -34,7 +34,7 @@ const StripeCheckoutButton = ({ price }) => {
       billingAddress
       shippingAddress
       image="https://svgshare.com/i/CUz.svg"
-      description={`Your total is Rs.{price}`}
+      description={`Your total is ${price}`}
       amount={priceForStripe}
       panelLabel="Pay Now"
       token={onToken}
